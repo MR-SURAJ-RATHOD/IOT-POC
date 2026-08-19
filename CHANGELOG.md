@@ -8,6 +8,10 @@ starting with the first tagged release.
 
 ## [Unreleased]
 
+### Fixed
+
+- Restored missing `I2cTempHumiditySensor` class declaration in `sensors/temperature_humidity` header (broken during comment edits, failed CI firmware build).
+
 ### Added
 
 - Repository identity as an Embedded & IoT Proof-of-Concept Reference (not a single-product or weather-only tree).

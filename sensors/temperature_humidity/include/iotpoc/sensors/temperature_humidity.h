@@ -12,6 +12,7 @@ namespace sensors {
  *
  * CHANGE: I2C address (example 0x44), temp_reg, humidity_reg to match YOUR chip datasheet.
  */
+class I2cTempHumiditySensor : public ISensor {
 public:
     I2cTempHumiditySensor(const char* id,
                           comm::I2cRegisterDevice& device,
