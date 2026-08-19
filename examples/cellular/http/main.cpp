@@ -1,3 +1,8 @@
+/**
+ * Modem HTTP GET. URL: IOTPOC_HTTP_URL in config.local.h (public test host only).
+ * Build: pio run -e example_http
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

@@ -1,3 +1,9 @@
+/**
+ * APN / PDP: prints AT+CGDCONT then sends it.
+ * CHANGE IOTPOC_APN in config.local.h. YOUR_APN is a placeholder, not a real APN.
+ * Build: pio run -e example_apn_pdp
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

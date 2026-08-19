@@ -6,6 +6,17 @@
 namespace iotpoc {
 namespace hal {
 
+/**
+ * Arduino HardwareSerial adapter for the Quectel AT stack.
+ *
+ * Constructor argument order: (port, rx_pin, tx_pin, baud)
+ * Wiring: ESP32 TX pin -> modem RX, ESP32 RX pin -> modem TX, shared GND.
+ * Default pins: IOTPOC_MODEM_UART_RX_PIN / TX_PIN in config (example 16 / 17).
+ *
+ * Typical call:
+ *   ArduinoUart uart(Serial2, RX, TX, 115200);
+ *   uart.begin();
+ */
 class ArduinoUart : public IUart {
 public:
     ArduinoUart(HardwareSerial& port, int rx_pin, int tx_pin, uint32_t baud);

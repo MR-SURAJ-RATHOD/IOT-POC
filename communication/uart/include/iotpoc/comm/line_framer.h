@@ -6,6 +6,7 @@
 namespace iotpoc {
 namespace comm {
 
+/** Newline-terminated ASCII lines (same idea as AtParser, for generic UART). */
 class LineFramer {
 public:
     explicit LineFramer(char* buffer, size_t capacity);

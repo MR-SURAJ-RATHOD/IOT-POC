@@ -6,6 +6,7 @@
 namespace iotpoc {
 namespace sensors {
 
+/** I2C RTC category: 16-bit epoch-like register. CHANGE address/reg for your RTC. */
 class I2cRtcSensor : public ISensor {
 public:
     I2cRtcSensor(const char* id, comm::I2cRegisterDevice& device, uint8_t epoch_reg);

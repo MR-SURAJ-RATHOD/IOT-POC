@@ -6,6 +6,11 @@
 namespace iotpoc {
 namespace hal {
 
+/**
+ * Byte UART contract used by AtClient and RS-485.
+ * Implement this on a new MCU instead of rewriting the AT parser.
+ * read_byte() returns 0–255 or -1 on timeout.
+ */
 class IUart {
 public:
     virtual ~IUart() {}

@@ -1,3 +1,9 @@
+/**
+ * NTP via modem. Replace YOUR_NTP_SERVER with a public NTP hostname in this file
+ * or add IOTPOC_NTP_SERVER to config.local.h later.
+ * Build: pio run -e example_ntp
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

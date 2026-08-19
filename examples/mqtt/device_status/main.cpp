@@ -1,3 +1,8 @@
+/**
+ * Combined status: retained "online" now + LWT "offline" for power loss.
+ * Build: pio run -e example_mqtt_device_status
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

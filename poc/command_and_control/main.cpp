@@ -1,3 +1,11 @@
+/**
+ * POC: same command parser for USB serial and MQTT cmd topic.
+ * Type ON1/OFF1 on serial. MQTT topic printed is devices/{id}/cmd.
+ *
+ * CHANGE: IOTPOC_DEVICE_ID and relay pin in config.local.h
+ * Build: pio run -e poc_command_and_control
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/commands/relay_command.h"

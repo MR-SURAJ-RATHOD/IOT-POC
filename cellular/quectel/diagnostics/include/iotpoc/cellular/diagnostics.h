@@ -5,6 +5,7 @@
 namespace iotpoc {
 namespace cellular {
 
+/** AT+CGMI / AT+CGMR. Run mask_secret() before printing if the payload might contain digits. */
 AtStatus query_manufacturer(AtClient& client, char* response, size_t response_size, uint32_t timeout_ms);
 AtStatus query_firmware(AtClient& client, char* response, size_t response_size, uint32_t timeout_ms);
 

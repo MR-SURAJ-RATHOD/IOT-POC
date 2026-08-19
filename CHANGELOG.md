@@ -20,7 +20,7 @@ starting with the first tagged release.
 - MQTT service examples: publish, subscribe, JSON telemetry, QoS, retained messages, LWT, reconnect, backoff, heartbeat, device status, commands, configuration.
 - FreeRTOS examples: tasks, priorities, queues, mutexes, semaphores, event groups, timers, watchdog, state machines.
 - Native Unity tests and GitHub Actions CI (firmware matrix, native tests, secret scan).
-- Architecture, hardware, sensor, cellular, MQTT, RTOS, and troubleshooting documentation plus diagrams.
+- Teaching comments on HAL, sensors, Quectel, MQTT, RTOS, examples, and config explaining how to use each piece and where to change pins/credentials.
 
 ### Security
 

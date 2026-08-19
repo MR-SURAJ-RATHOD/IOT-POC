@@ -1,3 +1,8 @@
+/**
+ * Signal quality: AT+CSQ -> RSSI. 99 usually means unknown / no signal.
+ * Build: pio run -e example_signal_quality
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

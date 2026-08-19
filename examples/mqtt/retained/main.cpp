@@ -1,3 +1,8 @@
+/**
+ * Retained status=online on devices/{id}/status. Last retained value is kept by the broker.
+ * Build: pio run -e example_mqtt_retained
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

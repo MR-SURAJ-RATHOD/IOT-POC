@@ -1,15 +1,23 @@
 #pragma once
 
 /*
- * Placeholder configuration for public examples.
- * Copy this file to config.local.h (gitignored) and replace values locally.
- * Never commit real SSIDs, passwords, APNs, tokens, or private keys.
+ * PUBLIC PLACEHOLDERS — safe to commit.
+ *
+ * To run Wi-Fi, MQTT, or cellular on hardware:
+ *   1. Copy this file to firmware/include/config.local.h
+ *   2. Replace every YOUR_* value (SSID, passwords, APN, broker host)
+ *   3. Adjust GPIO / UART pins to match YOUR wiring
+ *   4. Never commit config.local.h (it is gitignored)
+ *
+ * Firmware includes iotpoc_config.h, which prefers config.local.h automatically.
  */
 
+/* MQTT / telemetry identity. Appears in topic: devices/{id}/... */
 #ifndef IOTPOC_DEVICE_ID
 #define IOTPOC_DEVICE_ID "YOUR_DEVICE_ID"
 #endif
 
+/* Wi-Fi STA credentials. Leave YOUR_ prefix to skip connect in examples. */
 #ifndef IOTPOC_WIFI_SSID
 #define IOTPOC_WIFI_SSID "YOUR_WIFI_SSID"
 #endif
@@ -18,6 +26,7 @@
 #define IOTPOC_WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
 #endif
 
+/* MQTT broker. Host still starting with YOUR_ means "do not connect". */
 #ifndef IOTPOC_MQTT_HOST
 #define IOTPOC_MQTT_HOST "YOUR_BROKER_HOST"
 #endif
@@ -38,6 +47,7 @@
 #define IOTPOC_MQTT_CLIENT_ID "YOUR_MQTT_CLIENT_ID"
 #endif
 
+/* Cellular packet data. Operator APN only in config.local.h, never in git. */
 #ifndef IOTPOC_APN
 #define IOTPOC_APN "YOUR_APN"
 #endif
@@ -58,6 +68,10 @@
 #define IOTPOC_HTTPS_URL "https://YOUR_HTTPS_HOST/path"
 #endif
 
+/*
+ * Quectel UART on ESP32 Serial2 (example pins — change for your PCB).
+ * Cross TX/RX: ESP32 TX -> modem RX, ESP32 RX -> modem TX, common GND.
+ */
 #ifndef IOTPOC_MODEM_UART_TX_PIN
 #define IOTPOC_MODEM_UART_TX_PIN 17
 #endif
@@ -70,6 +84,7 @@
 #define IOTPOC_MODEM_UART_BAUD 115200
 #endif
 
+/* Dual relay POC. Many modules are ACTIVE LOW (see poc/relay_control). */
 #ifndef IOTPOC_RELAY1_PIN
 #define IOTPOC_RELAY1_PIN 27
 #endif

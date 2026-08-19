@@ -1,3 +1,9 @@
+/**
+ * Remote config stand-in: type interval_ms=2000 on USB.
+ * MQTT topic is devices/{id}/cfg. Add NVS persistence later — RAM only here.
+ * Build: pio run -e example_mqtt_configuration
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

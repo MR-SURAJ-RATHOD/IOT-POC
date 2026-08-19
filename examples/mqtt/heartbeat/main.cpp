@@ -1,3 +1,8 @@
+/**
+ * Heartbeat every 5 s on devices/{id}/heartbeat. Change 5000 in loop() for period.
+ * Build: pio run -e example_mqtt_heartbeat
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

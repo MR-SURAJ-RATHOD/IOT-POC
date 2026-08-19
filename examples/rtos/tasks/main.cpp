@@ -1,3 +1,9 @@
+/**
+ * FreeRTOS: two tasks printing on Serial. Change stack (2048) / priority (1) in xTaskCreate.
+ * loop() is itself a FreeRTOS task — do not block it forever without vTaskDelay.
+ * Build: pio run -e example_rtos_tasks
+ */
+
 #include <Arduino.h>
 
 static void worker(void* arg) {

@@ -8,6 +8,7 @@
 namespace iotpoc {
 namespace comm {
 
+/** DE/RE pin on the RS-485 transceiver: true = drive A/B, false = listen. */
 class IDirectionPin {
 public:
     virtual ~IDirectionPin() {}

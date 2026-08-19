@@ -3,6 +3,14 @@
 namespace iotpoc {
 namespace rtos {
 
+/**
+ * Application-level state table (not FreeRTOS itself).
+ * Edit app_next_state() in rtos/fsm/src/app_fsm.cpp to add transitions.
+ *
+ * Typical path: Idle --Start--> Init --Ready--> Run
+ *               Run --LinkLost--> Reconnect --LinkUp--> Run
+ *               any --Fatal--> Fault (terminal)
+ */
 enum class AppState {
     Idle = 0,
     Init,

@@ -1,3 +1,8 @@
+/**
+ * GNSS power-on + position query (outdoor antenna usually required).
+ * Build: pio run -e example_gnss
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

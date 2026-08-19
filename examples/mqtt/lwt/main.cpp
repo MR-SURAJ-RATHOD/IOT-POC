@@ -1,3 +1,8 @@
+/**
+ * Last Will (LWT): broker publishes retained "offline" if we vanish without DISCONNECT.
+ * Unplug USB after connect to test. Build: pio run -e example_mqtt_lwt
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

@@ -8,6 +8,10 @@
 namespace iotpoc {
 namespace comm {
 
+/**
+ * Read/write 8-bit register maps over an injected II2cBus.
+ * Pass the 7-bit address (example 0x44). Drivers must not call Wire globally.
+ */
 class I2cRegisterDevice {
 public:
     I2cRegisterDevice(hal::II2cBus& bus, uint8_t address);

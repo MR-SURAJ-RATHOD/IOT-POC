@@ -7,6 +7,18 @@
 namespace iotpoc {
 namespace cellular {
 
+/**
+ * Sends one AT command, waits until OK / ERROR / CME ERROR / timeout.
+ *
+ * Usage:
+ *   char line[256], resp[192];
+ *   AtClient client(uart, line, sizeof(line));
+ *   AtStatus st = client.send_command("AT", resp, sizeof(resp), 1000);
+ *
+ * Do not send a second command until the first returns (single in-flight).
+ * Feature modules (sim, network, pdp, …) wrap standard commands — prefer those
+ * instead of concatenating AT strings in application code.
+ */
 class AtClient {
 public:
     AtClient(hal::IUart& uart, char* line_buffer, size_t line_capacity);

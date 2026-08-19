@@ -1,3 +1,9 @@
+/**
+ * Modem-hosted MQTT (AT+QMTOPEN). Host/port: IOTPOC_MQTT_HOST / IOTPOC_MQTT_PORT.
+ * This is Backend B (AT-MQTT), not the ESP32 Wi-Fi PubSubClient path.
+ * Build: pio run -e example_mqtt_at
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

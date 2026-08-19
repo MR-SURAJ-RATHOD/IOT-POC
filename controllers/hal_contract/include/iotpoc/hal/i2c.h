@@ -6,6 +6,10 @@
 namespace iotpoc {
 namespace hal {
 
+/**
+ * Injected I2C bus. Sensor drivers take II2cBus& so they can be unit-tested
+ * with a fake bus (see AnalogVoltageSensor::inject_raw for the same idea).
+ */
 class II2cBus {
 public:
     virtual ~II2cBus() {}

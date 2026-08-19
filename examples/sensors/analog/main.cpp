@@ -1,3 +1,9 @@
+/**
+ * Analog voltage on GPIO 34 (example ADC1 pin — change for your board).
+ * Avoid ADC2 while using Wi-Fi. Calibrate vref (3.3f) if your rail is not 3.3 V.
+ * Build: pio run -e example_sensor_analog
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/adc.h"

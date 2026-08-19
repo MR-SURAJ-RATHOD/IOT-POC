@@ -5,6 +5,7 @@
 namespace iotpoc {
 namespace cellular {
 
+/** Result of one AT exchange. Timeout is common if TX/RX are swapped. */
 enum class AtStatus {
     Ok = 0,
     Error,
@@ -13,6 +14,11 @@ enum class AtStatus {
     Transport
 };
 
+/**
+ * Bring-up states. Walk: Idle -> CheckAt -> CheckSim -> CheckRegistration
+ * -> CheckSignal -> ConfigurePdp -> Ready. Failures go to Backoff or Fault.
+ * Table: modem_next_state() in modem_state.cpp — edit there, not in examples.
+ */
 enum class ModemState {
     Idle = 0,
     CheckAt,
@@ -38,6 +44,7 @@ enum class ModemEvent {
     LinkLost
 };
 
+/** Timeouts for the first documented module class (EC2xx-style). Add BG9x as another profile, do not fork the parser. */
 struct ModuleProfile {
     const char* name;
     uint32_t at_timeout_ms;

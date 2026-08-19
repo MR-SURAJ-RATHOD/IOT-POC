@@ -1,3 +1,9 @@
+/**
+ * Network registration: AT+CEREG?  stat 1 or 5 = attached.
+ * Antenna / operator issues show as not registered, not as a firmware bug.
+ * Build: pio run -e example_network_registration
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

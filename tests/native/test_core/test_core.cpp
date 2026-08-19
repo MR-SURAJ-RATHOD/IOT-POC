@@ -1,3 +1,11 @@
+/**
+ * Native Unity tests (no ESP32). Requires gcc/g++ (CI uses Ubuntu).
+ *
+ *   cd firmware && python -m platformio test -e native
+ *
+ * MockUart injects canned AT text after each write so AtClient can be tested host-side.
+ */
+
 #include <cstring>
 #include <string>
 #include <unity.h>
@@ -44,6 +52,7 @@ using iotpoc::sensors::AnalogVoltageSensor;
 using iotpoc::sensors::SensorReading;
 using iotpoc::sensors::analog_raw_to_volts;
 
+/* Fake UART: on write(), load canned modem bytes so send_command() can parse OK. */
 class MockUart : public iotpoc::hal::IUart {
 public:
     void set_canned(const char* text) { canned_ = text != nullptr ? text : ""; }

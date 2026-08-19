@@ -1,3 +1,9 @@
+/**
+ * MQTT command stand-in: type ON1/OFF1 on USB (same parser as broker payloads).
+ * Topic name printed is devices/{id}/cmd. Relay pin: IOTPOC_RELAY1_PIN.
+ * Build: pio run -e example_mqtt_commands
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/commands/relay_command.h"

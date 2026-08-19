@@ -1,3 +1,9 @@
+/**
+ * Modbus RTU read-holding ADU builder (slave 1, register 0x0001).
+ * CHANGE slave/address in ModbusHoldingSensor. CRC is checked on the request we built.
+ * Build: pio run -e example_sensor_rs485
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/comm/modbus_rtu.h"

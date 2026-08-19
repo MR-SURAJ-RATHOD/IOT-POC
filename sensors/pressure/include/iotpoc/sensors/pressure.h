@@ -6,6 +6,7 @@
 namespace iotpoc {
 namespace sensors {
 
+/** I2C pressure category: 16-bit register * 10 -> Pa. CHANGE address/reg for your part. */
 class I2cPressureSensor : public ISensor {
 public:
     I2cPressureSensor(const char* id, comm::I2cRegisterDevice& device, uint8_t pressure_reg);

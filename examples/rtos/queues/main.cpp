@@ -1,3 +1,9 @@
+/**
+ * Queue: producer sends uint32_t, consumer prints. Size 8 in xQueueCreate.
+ * Use queues for telemetry instead of global variables.
+ * Build: pio run -e example_rtos_queues
+ */
+
 #include <Arduino.h>
 
 static QueueHandle_t queue;

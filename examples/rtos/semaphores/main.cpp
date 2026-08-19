@@ -1,3 +1,9 @@
+/**
+ * Binary semaphore: one task "gives" (ISR stand-in), the other waits.
+ * Pulse sensors (wind/rain) typically give from a GPIO ISR.
+ * Build: pio run -e example_rtos_semaphores
+ */
+
 #include <Arduino.h>
 
 static SemaphoreHandle_t pulse;

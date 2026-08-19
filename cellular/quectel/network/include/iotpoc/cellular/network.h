@@ -5,6 +5,7 @@
 namespace iotpoc {
 namespace cellular {
 
+/** AT+CEREG? / AT+CSQ. registration_attached: stat 1 or 5. parse_rssi: 99 = unknown. */
 AtStatus query_registration(AtClient& client, char* response, size_t response_size, uint32_t timeout_ms);
 AtStatus query_signal(AtClient& client, char* response, size_t response_size, uint32_t timeout_ms);
 bool registration_attached(const char* response);

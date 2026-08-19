@@ -1,3 +1,9 @@
+/**
+ * Reconnect loop: if the broker drops, connect_broker() is retried from loop().
+ * Pair with example_mqtt_backoff for delay between attempts.
+ * Build: pio run -e example_mqtt_reconnect
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

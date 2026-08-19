@@ -5,6 +5,7 @@
 namespace iotpoc {
 namespace cellular {
 
+/** AT+CPIN?  sim_response_ready() is true when the payload contains READY. */
 AtStatus query_sim_ready(AtClient& client, char* response, size_t response_size, uint32_t timeout_ms);
 bool sim_response_ready(const char* response);
 

@@ -1,3 +1,9 @@
+/**
+ * Digital input on GPIO 0 with pull-up (often the BOOT button on DevKit).
+ * CHANGE the pin if GPIO 0 is awkward on your board.
+ * Build: pio run -e example_sensor_digital
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

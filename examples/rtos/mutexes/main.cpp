@@ -1,3 +1,9 @@
+/**
+ * Mutex: two tasks bump a shared int. Take mutex before the shared write, give after.
+ * Same pattern for I2C / AT UART (one owner at a time).
+ * Build: pio run -e example_rtos_mutexes
+ */
+
 #include <Arduino.h>
 
 static SemaphoreHandle_t mutex;

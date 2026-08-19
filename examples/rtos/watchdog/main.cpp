@@ -1,3 +1,9 @@
+/**
+ * Task watchdog: init 8 s, add this task, feed every 1 s.
+ * Comment out watchdog_feed() once to see a reset (reset reason = watchdog).
+ * Build: pio run -e example_rtos_watchdog
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/watchdog.h"

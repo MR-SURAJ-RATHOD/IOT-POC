@@ -1,3 +1,9 @@
+/**
+ * Priorities: high=3 preempts low=1 when both are runnable.
+ * Higher number = higher priority on FreeRTOS.
+ * Build: pio run -e example_rtos_priorities
+ */
+
 #include <Arduino.h>
 
 static void low_task(void*) {

@@ -5,6 +5,10 @@
 namespace iotpoc {
 namespace sensors {
 
+/**
+ * Pulse-frequency sensor (anemometer-style, also usable for flow meters).
+ * inject_pulses() from an ISR counter; hz_per_unit converts Hz to engineering units.
+ */
 class PulseFrequencySensor : public ISensor {
 public:
     PulseFrequencySensor(const char* id, float hz_per_unit);

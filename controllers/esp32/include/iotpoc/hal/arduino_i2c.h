@@ -6,6 +6,10 @@
 namespace iotpoc {
 namespace hal {
 
+/**
+ * Arduino Wire adapter. Default Wire is SDA=21 SCL=22 on many ESP32 DevKits.
+ * Pass another TwoWire if you use a second I2C bus.
+ */
 class ArduinoI2c : public II2cBus {
 public:
     explicit ArduinoI2c(TwoWire& wire = Wire);

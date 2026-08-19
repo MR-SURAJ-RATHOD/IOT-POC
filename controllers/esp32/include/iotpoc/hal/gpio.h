@@ -6,6 +6,10 @@
 namespace iotpoc {
 namespace hal {
 
+/**
+ * GPIO HAL — application/examples should use this (or DigitalOutput) instead of pinMode().
+ * Pin numbers come from config.local.h, not from scattered #defines in sketches.
+ */
 enum class PinModeKind {
     Input = 0,
     Output,

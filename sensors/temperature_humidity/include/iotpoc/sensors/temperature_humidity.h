@@ -6,7 +6,12 @@
 namespace iotpoc {
 namespace sensors {
 
-class I2cTempHumiditySensor : public ISensor {
+/**
+ * Category example: I2C 16-bit temperature (int16/100 °C) and humidity (uint16/100 %RH).
+ * This is a REGISTER MAP PATTERN, not a copy of a vendor SHT/BME driver.
+ *
+ * CHANGE: I2C address (example 0x44), temp_reg, humidity_reg to match YOUR chip datasheet.
+ */
 public:
     I2cTempHumiditySensor(const char* id,
                           comm::I2cRegisterDevice& device,

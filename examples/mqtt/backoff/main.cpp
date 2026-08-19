@@ -1,3 +1,9 @@
+/**
+ * Exponential backoff delays printed on Serial (500, 1000, 2000, ... cap 8000 ms).
+ * No broker required. Tune initial/max/multiplier in ExponentialBackoff(...).
+ * Build: pio run -e example_mqtt_backoff
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

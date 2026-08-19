@@ -6,6 +6,12 @@
 namespace iotpoc {
 namespace cellular {
 
+/**
+ * Line assembler for AT text. Feed one UART byte at a time.
+ * When feed() returns true, *line_out points at an internal buffer until the next feed().
+ *
+ * mask_secret() redacts long digit runs (IMSI/ICCID style) before Serial.print.
+ */
 class AtParser {
 public:
     AtParser(char* buffer, size_t capacity);

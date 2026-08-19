@@ -1,3 +1,8 @@
+/**
+ * Cellular reconnect backoff (no UART required). Delays grow 1s, 2s, ... cap 60s.
+ * Build: pio run -e example_reconnect
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/modem_state.h"

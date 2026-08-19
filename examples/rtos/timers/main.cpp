@@ -1,3 +1,8 @@
+/**
+ * Software timer heartbeat every 1000 ms (pdTRUE = auto-reload).
+ * Build: pio run -e example_rtos_timers
+ */
+
 #include <Arduino.h>
 
 static TimerHandle_t timer;

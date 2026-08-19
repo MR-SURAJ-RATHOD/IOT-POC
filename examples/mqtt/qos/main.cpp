@@ -1,3 +1,8 @@
+/**
+ * QoS demo: publish is QoS 0 (PubSubClient limit); subscribe requests QoS 1.
+ * Build: pio run -e example_mqtt_qos
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

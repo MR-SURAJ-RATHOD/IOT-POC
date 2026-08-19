@@ -5,6 +5,12 @@
 namespace iotpoc {
 namespace rtos {
 
+/**
+ * Delay sequence: initial, initial*mult, ... capped at max_ms.
+ * Call reset() after a successful connect so the next outage starts short again.
+ *
+ * Used by MQTT reconnect examples and Quectel ReconnectPolicy.
+ */
 class ExponentialBackoff {
 public:
     ExponentialBackoff(uint32_t initial_ms, uint32_t max_ms, uint32_t multiplier);

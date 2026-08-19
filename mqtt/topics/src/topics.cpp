@@ -7,6 +7,7 @@ namespace iotpoc {
 namespace mqtt {
 namespace {
 
+/* Single formatter so all topics stay devices/{id}/{suffix}. Change the pattern here. */
 bool format_topic(char* out, size_t out_size, const char* device_id, const char* suffix) {
     if (out == nullptr || device_id == nullptr || suffix == nullptr || out_size < 8) {
         return false;

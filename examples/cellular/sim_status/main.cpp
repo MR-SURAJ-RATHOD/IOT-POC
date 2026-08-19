@@ -1,3 +1,8 @@
+/**
+ * Quectel SIM: AT+CPIN?  Expect READY (or handle PIN locally — never commit a PIN).
+ * Build: pio run -e example_sim_status
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

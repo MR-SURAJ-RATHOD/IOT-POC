@@ -1,3 +1,9 @@
+/**
+ * Application FSM table: Idle -> Init -> Run -> Reconnect.
+ * Edit transitions in rtos/fsm/src/app_fsm.cpp, not in this sketch.
+ * Build: pio run -e example_rtos_state_machines
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/rtos/app_fsm.h"

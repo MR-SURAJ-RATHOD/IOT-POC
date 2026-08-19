@@ -13,6 +13,7 @@ void DigitalOutput::init(bool start_off) {
 
 void DigitalOutput::set(bool on) {
     on_ = on;
+    /* Active-low module: coil ON means drive the pin LOW. */
     const bool high = active_low_ ? !on : on;
     hal::gpio_write(pin_, high ? hal::PinLevel::High : hal::PinLevel::Low);
 }

@@ -1,3 +1,11 @@
+/**
+ * MQTT publish one JSON hello to devices/{id}/telemetry.
+ *
+ * CHANGE: IOTPOC_WIFI_* and IOTPOC_MQTT_* in config.local.h
+ * If they still start with YOUR_, connect is skipped (safe for public builds).
+ * Build: pio run -e example_mqtt_publish
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

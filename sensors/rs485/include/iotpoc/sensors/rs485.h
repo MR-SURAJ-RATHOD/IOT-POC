@@ -6,6 +6,10 @@
 namespace iotpoc {
 namespace sensors {
 
+/**
+ * Modbus holding register as ISensor. CHANGE slave id and register address.
+ * build_request() fills an 8-byte RTU ADU; inject_register() fakes a reply for tests.
+ */
 class ModbusHoldingSensor : public ISensor {
 public:
     ModbusHoldingSensor(const char* id, uint8_t slave, uint16_t address);

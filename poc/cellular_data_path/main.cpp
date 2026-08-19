@@ -1,3 +1,14 @@
+/**
+ * POC: Quectel bring-up (AT -> SIM -> registration -> PDP) + task watchdog.
+ *
+ * WHERE TO CHANGE
+ *   UART pins / baud: IOTPOC_MODEM_UART_* in config.local.h
+ *   APN: IOTPOC_APN (placeholder YOUR_APN will still send CGDCONT — use a real APN on hardware)
+ *
+ * WIRING: ESP32 TX -> modem RX, ESP32 RX -> modem TX, strong modem supply (not ESP 3V3).
+ * Build: pio run -e poc_cellular_data_path
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

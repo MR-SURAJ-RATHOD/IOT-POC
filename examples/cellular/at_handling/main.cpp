@@ -1,3 +1,13 @@
+/**
+ * Quectel: send AT and print OK/ERROR/timeout.
+ *
+ * If you always get Timeout: swap TX/RX, check baud (IOTPOC_MODEM_UART_BAUD),
+ * and confirm the modem has power. Pins: IOTPOC_MODEM_UART_RX_PIN / TX_PIN.
+ *
+ * This is the only demo that sends a raw "AT" string on purpose.
+ * Build: pio run -e example_at_handling
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

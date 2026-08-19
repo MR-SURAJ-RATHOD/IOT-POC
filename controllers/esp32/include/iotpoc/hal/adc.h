@@ -5,6 +5,7 @@
 namespace iotpoc {
 namespace hal {
 
+/** ESP32 ADC1 preferred. Avoid ADC2 while Wi-Fi is running. */
 int adc_read_raw(int pin);
 float adc_raw_to_volts(int raw, float vref = 3.3f, int max_raw = 4095);
 

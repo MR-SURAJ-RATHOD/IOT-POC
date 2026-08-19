@@ -5,6 +5,7 @@
 namespace iotpoc {
 namespace sensors {
 
+/** UV index holder. inject_index() from ADC mapping; calibrate per photodiode. */
 class UvIndexSensor : public ISensor {
 public:
     explicit UvIndexSensor(const char* id);

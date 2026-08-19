@@ -1,3 +1,9 @@
+/**
+ * Event group bits: SIM | IP | MQTT. Wait for all before starting the app.
+ * Change BIT_* masks if you add another ready condition.
+ * Build: pio run -e example_rtos_event_groups
+ */
+
 #include <Arduino.h>
 
 #define BIT_SIM (1 << 0)

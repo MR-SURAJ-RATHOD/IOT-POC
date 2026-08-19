@@ -1,3 +1,10 @@
+/**
+ * I2C temperature/humidity CATEGORY driver (register map example, not a vendor SDK).
+ * CHANGE: address 0x44, registers 0x00/0x02, and Wire pins (default SDA 21 / SCL 22).
+ * Bus errors on Serial are expected if no device is attached.
+ * Build: pio run -e example_sensor_temp_humidity
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/comm/i2c_register.h"

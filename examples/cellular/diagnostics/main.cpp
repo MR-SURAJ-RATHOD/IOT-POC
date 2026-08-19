@@ -1,3 +1,8 @@
+/**
+ * Diagnostics: AT+CGMI / AT+CGMR. Digit strings are masked before print.
+ * Do not log IMSI/ICCID. Build: pio run -e example_diagnostics
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"

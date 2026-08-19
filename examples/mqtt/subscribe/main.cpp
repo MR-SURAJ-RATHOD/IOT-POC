@@ -1,3 +1,9 @@
+/**
+ * MQTT subscribe to devices/{id}/cmd.
+ * Add mqtt.raw().setCallback(...) if you want incoming payloads (see PubSubClient).
+ * Build: pio run -e example_mqtt_subscribe
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

@@ -1,3 +1,12 @@
+/**
+ * POC: analog GPIO -> SensorReading -> JSON telemetry string.
+ *
+ * MQTT publish is optional here; this shows the JSON shape used by MQTT examples.
+ * CHANGE: ADC pin (34 is an example ADC1 pin). Set Wi-Fi later in mqtt examples.
+ *
+ * Build: pio run -e poc_sensor_telemetry
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/adc.h"

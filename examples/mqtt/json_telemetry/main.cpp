@@ -1,3 +1,9 @@
+/**
+ * JSON telemetry builder only (no broker). Shows schema=1 payload on Serial.
+ * CHANGE field names in mqtt/telemetry if your cloud schema differs.
+ * Build: pio run -e example_mqtt_json_telemetry
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/hal/board.h"

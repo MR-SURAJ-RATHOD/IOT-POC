@@ -1,3 +1,9 @@
+/**
+ * HTTPS: configures a TLS context placeholder. Do NOT commit private certificates.
+ * URL: IOTPOC_HTTPS_URL. Prefer public test endpoints.
+ * Build: pio run -e example_https
+ */
+
 #include <Arduino.h>
 
 #include "iotpoc/cellular/at_client.h"
