@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="240" viewBox="0 0 760 240" role="img" aria-label="Sensor abstraction">
+  <title>Sensor abstraction</title>
+  <rect x="20" y="90" width="120" height="50" fill="none" stroke="currentColor"/>
+  <text x="80" y="120" text-anchor="middle">ISensor</text>
+  <rect x="200" y="20" width="160" height="36" fill="none" stroke="currentColor"/>
+  <text x="280" y="43" text-anchor="middle">temp / humidity</text>
+  <rect x="200" y="66" width="160" height="36" fill="none" stroke="currentColor"/>
+  <text x="280" y="89" text-anchor="middle">analog / digital</text>
+  <rect x="200" y="112" width="160" height="36" fill="none" stroke="currentColor"/>
+  <text x="280" y="135" text-anchor="middle">RS-485 / RTC</text>
+  <rect x="200" y="158" width="160" height="36" fill="none" stroke="currentColor"/>
+  <text x="280" y="181" text-anchor="middle">pulse / UV / pressure</text>
+  <rect x="440" y="40" width="140" height="40" fill="none" stroke="currentColor"/>
+  <text x="510" y="65" text-anchor="middle">I2C HAL</text>
+  <rect x="440" y="100" width="140" height="40" fill="none" stroke="currentColor"/>
+  <text x="510" y="125" text-anchor="middle">ADC / GPIO HAL</text>
+  <rect x="440" y="160" width="140" height="40" fill="none" stroke="currentColor"/>
+  <text x="510" y="185" text-anchor="middle">UART RS-485 HAL</text>
+  <path d="M140 115 H200" stroke="currentColor"/>
+  <path d="M360 80 H440" stroke="currentColor"/>
+</svg>

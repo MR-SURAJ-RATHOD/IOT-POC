@@ -1,0 +1,8 @@
+{
+  "name": "temperature_humidity",
+  "version": "0.1.0",
+  "description": "Generic I2C temperature/humidity category driver (register map example)",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

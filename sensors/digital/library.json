@@ -1,0 +1,8 @@
+{
+  "name": "digital_io",
+  "version": "0.1.0",
+  "description": "GPIO digital input/output and active-low relay helper",
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": "espressif32"
+}

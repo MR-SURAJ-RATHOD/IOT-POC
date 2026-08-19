@@ -1,0 +1,8 @@
+{
+  "name": "i2c_registers",
+  "version": "0.1.0",
+  "description": "Portable I2C register read/write helper",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

@@ -1,0 +1,29 @@
+name: POC request
+description: Request a new example or driver category
+title: "[poc] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: pattern
+    attributes:
+      label: Embedded pattern to demonstrate
+      description: Describe the reusable engineering pattern, not a product name.
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Layer
+      options:
+        - Application / POC
+        - Service
+        - Driver / HAL
+        - Hardware notes
+        - Tests / CI
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware (optional)
+      description: Example modules only. No confidential schematics.

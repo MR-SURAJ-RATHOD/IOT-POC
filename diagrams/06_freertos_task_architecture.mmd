@@ -1,0 +1,17 @@
+flowchart TB
+  subgraph tasks [Tasks]
+    SensorTask[SensorTask]
+    CommsTask[CommsTask]
+    MqttTask[MqttTask]
+    CmdTask[CommandTask]
+    WdtTask[WatchdogTask]
+  end
+  Q1[ReadingQueue] --> MqttTask
+  SensorTask --> Q1
+  CmdTask --> Q2[CommandQueue]
+  MqttTask --> Q2
+  SensorTask --> WdtTask
+  CommsTask --> WdtTask
+  MqttTask --> WdtTask
+  SM[AppStateMachine] --> SensorTask
+  SM --> CommsTask

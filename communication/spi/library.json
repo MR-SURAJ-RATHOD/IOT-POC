@@ -1,0 +1,8 @@
+{
+  "name": "spi_bus",
+  "version": "0.1.0",
+  "description": "SPI helper notes and identity transfer wrapper",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

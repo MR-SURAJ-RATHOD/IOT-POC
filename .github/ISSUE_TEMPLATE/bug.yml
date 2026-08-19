@@ -1,0 +1,48 @@
+name: Bug report
+description: Unexpected firmware, driver, or documentation behavior
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository is a public POC reference. Do not paste credentials, APNs, IMSI/ICCID, or private keys.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - HAL / ESP32
+        - Sensors
+        - Communication / Modbus
+        - Quectel / cellular
+        - MQTT
+        - FreeRTOS
+        - CI / tests
+        - Docs
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: PlatformIO environment
+      placeholder: poc_relay_control
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true

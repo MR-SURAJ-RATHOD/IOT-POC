@@ -1,0 +1,8 @@
+{
+  "name": "modbus_rtu",
+  "version": "0.1.0",
+  "description": "Modbus RTU CRC-16 and ADU builder (portable)",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

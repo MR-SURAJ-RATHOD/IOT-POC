@@ -1,0 +1,8 @@
+{
+  "name": "at_core",
+  "version": "0.1.0",
+  "description": "Portable Quectel AT parser, client, profile, and bring-up state machine",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

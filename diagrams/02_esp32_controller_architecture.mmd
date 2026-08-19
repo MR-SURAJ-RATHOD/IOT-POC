@@ -1,0 +1,14 @@
+flowchart LR
+  App[examples_and_poc] --> HalIf[hal_contract]
+  HalIf --> Gpio[gpio]
+  HalIf --> Uart[uart]
+  HalIf --> I2c[i2c]
+  HalIf --> Spi[spi]
+  HalIf --> Adc[adc]
+  HalIf --> Wdt[watchdog]
+  Gpio --> Esp32[ESP32_DevKit]
+  Uart --> Esp32
+  I2c --> Esp32
+  Spi --> Esp32
+  Adc --> Esp32
+  Wdt --> Esp32

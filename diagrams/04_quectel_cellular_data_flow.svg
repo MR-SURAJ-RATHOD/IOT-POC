@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="160" viewBox="0 0 820 160" role="img" aria-label="Quectel cellular data flow">
+  <title>Quectel cellular data flow</title>
+  <rect x="10" y="50" width="120" height="50" fill="none" stroke="currentColor"/>
+  <text x="70" y="80" text-anchor="middle">Service</text>
+  <rect x="150" y="50" width="120" height="50" fill="none" stroke="currentColor"/>
+  <text x="210" y="80" text-anchor="middle">State machine</text>
+  <rect x="290" y="50" width="110" height="50" fill="none" stroke="currentColor"/>
+  <text x="345" y="80" text-anchor="middle">AtClient</text>
+  <rect x="420" y="50" width="110" height="50" fill="none" stroke="currentColor"/>
+  <text x="475" y="80" text-anchor="middle">AtParser</text>
+  <rect x="550" y="50" width="110" height="50" fill="none" stroke="currentColor"/>
+  <text x="605" y="80" text-anchor="middle">UART HAL</text>
+  <rect x="680" y="50" width="120" height="50" fill="none" stroke="currentColor"/>
+  <text x="740" y="80" text-anchor="middle">Quectel</text>
+  <path d="M130 75 H150" stroke="currentColor"/>
+  <path d="M270 75 H290" stroke="currentColor"/>
+  <path d="M400 75 H420" stroke="currentColor"/>
+  <path d="M530 75 H550" stroke="currentColor"/>
+  <path d="M660 75 H680" stroke="currentColor"/>
+</svg>

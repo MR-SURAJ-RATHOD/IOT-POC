@@ -1,0 +1,14 @@
+title = "IOT-POC gitleaks"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Documented public placeholders only"
+regexes = [
+  '''YOUR_[A-Z0-9_]+''',
+]
+paths = [
+  '''(^|/)firmware/include/config\.example\.h$''',
+  '''(^|/)docs/''',
+]

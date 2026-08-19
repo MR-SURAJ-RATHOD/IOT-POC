@@ -1,0 +1,7 @@
+{
+  "name": "wind_speed",
+  "version": "0.1.0",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

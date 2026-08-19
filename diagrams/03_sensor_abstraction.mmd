@@ -1,0 +1,16 @@
+flowchart LR
+  App[Service_or_POC] --> ISensor
+  ISensor --> TempHum[temperature_humidity]
+  ISensor --> Pressure[pressure]
+  ISensor --> Rtc[rtc]
+  ISensor --> WindS[wind_speed]
+  ISensor --> WindD[wind_direction]
+  ISensor --> Rain[rain]
+  ISensor --> Uv[uv]
+  ISensor --> Analog[analog]
+  ISensor --> Digital[digital]
+  ISensor --> Rs485[rs485]
+  TempHum --> I2CBus[I2C_HAL]
+  Analog --> Adc[ADC_HAL]
+  Digital --> Gpio[GPIO_HAL]
+  Rs485 --> UartRs485[UART_RS485_HAL]

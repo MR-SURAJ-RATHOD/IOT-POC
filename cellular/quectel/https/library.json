@@ -1,0 +1,7 @@
+{
+  "name": "quectel_https",
+  "version": "0.1.0",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

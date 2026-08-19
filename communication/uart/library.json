@@ -1,0 +1,8 @@
+{
+  "name": "uart_framer",
+  "version": "0.1.0",
+  "description": "Portable UART line assembler",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

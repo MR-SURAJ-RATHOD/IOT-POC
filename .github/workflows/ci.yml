@@ -1,0 +1,102 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install gitleaks
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz | tar -xz gitleaks
+      - name: Detect secrets
+        run: ./gitleaks detect --source . --config .gitleaks.toml --no-banner --redact
+
+  native:
+    name: Native unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+          key: pio-native-${{ hashFiles('firmware/platformio.ini') }}
+      - name: Install PlatformIO
+        run: pip install platformio
+      - name: Run Unity tests
+        working-directory: firmware
+        run: pio test -e native --verbose
+
+  firmware:
+    name: Firmware build matrix
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            ~/.cache/pip
+          key: pio-fw-${{ hashFiles('firmware/platformio.ini') }}
+      - name: Install PlatformIO
+        run: pip install platformio
+      - name: Build all ESP32 environments
+        working-directory: firmware
+        run: |
+          pio run \
+            -e poc_relay_control \
+            -e poc_sensor_telemetry \
+            -e poc_cellular_data_path \
+            -e poc_command_and_control \
+            -e example_sensor_analog \
+            -e example_sensor_digital \
+            -e example_sensor_temp_humidity \
+            -e example_sensor_rs485 \
+            -e example_at_handling \
+            -e example_sim_status \
+            -e example_network_registration \
+            -e example_signal_quality \
+            -e example_apn_pdp \
+            -e example_http \
+            -e example_https \
+            -e example_mqtt_at \
+            -e example_gnss \
+            -e example_ntp \
+            -e example_reconnect \
+            -e example_diagnostics \
+            -e example_mqtt_publish \
+            -e example_mqtt_subscribe \
+            -e example_mqtt_json_telemetry \
+            -e example_mqtt_qos \
+            -e example_mqtt_retained \
+            -e example_mqtt_lwt \
+            -e example_mqtt_reconnect \
+            -e example_mqtt_backoff \
+            -e example_mqtt_heartbeat \
+            -e example_mqtt_device_status \
+            -e example_mqtt_commands \
+            -e example_mqtt_configuration \
+            -e example_rtos_tasks \
+            -e example_rtos_priorities \
+            -e example_rtos_queues \
+            -e example_rtos_mutexes \
+            -e example_rtos_semaphores \
+            -e example_rtos_event_groups \
+            -e example_rtos_timers \
+            -e example_rtos_watchdog \
+            -e example_rtos_state_machines

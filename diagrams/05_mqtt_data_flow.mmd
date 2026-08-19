@@ -1,0 +1,11 @@
+flowchart TB
+  Sensors[SensorReadings] --> Telemetry[TelemetryBuilder_JSON]
+  Telemetry --> Pub[MqttPublisher]
+  Cmd[MqttSubscriber] --> Commands[CommandDispatcher]
+  Commands --> Actuators[DigitalOutputs_Config]
+  Pub --> Client[MqttClient]
+  Cmd --> Client
+  Client --> Transport[WiFi_or_ATMQTT_or_PPP]
+  Client --> LWT[LWT_offline]
+  Client --> Status[Retained_status]
+  Client --> Hb[Heartbeat]

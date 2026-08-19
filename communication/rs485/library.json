@@ -1,0 +1,8 @@
+{
+  "name": "rs485_dir",
+  "version": "0.1.0",
+  "description": "RS-485 driver-enable helper around UART",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

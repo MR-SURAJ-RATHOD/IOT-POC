@@ -10,6 +10,10 @@
  *          ON2  - Turn ON Relay 2
  *          OFF2 - Turn OFF Relay 2
  *
+ *  Layered PlatformIO migration (same commands and active-low behaviour):
+ *      poc/relay_control/main.cpp
+ *      Build: cd firmware && pio run -e poc_relay_control
+ *
  *  NOTE:
  *      Most relay modules are ACTIVE LOW:
  *          LOW  = Relay ON

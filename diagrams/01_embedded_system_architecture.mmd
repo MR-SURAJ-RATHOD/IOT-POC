@@ -1,0 +1,37 @@
+flowchart TB
+  subgraph application [Application]
+    PocApps[POC_and_examples]
+  end
+  subgraph services [Services]
+    Telemetry[TelemetryService]
+    Command[CommandService]
+    Config[ConfigService]
+    Diag[DiagnosticsService]
+    MqttSvc[MqttService]
+    CellularSvc[CellularService]
+  end
+  subgraph drivers [HAL_and_Drivers]
+    SensorIf[SensorInterface]
+    QuectelAt[QuectelAtCore]
+    BusHelpers[Uart_I2C_SPI_RS485]
+    EspHal[ESP32_HAL]
+  end
+  subgraph hardware [Hardware]
+    Mcu[ESP32]
+    SensorsHw[Sensors_and_actuators]
+    Modem[Quectel_module]
+  end
+  PocApps --> Telemetry
+  PocApps --> Command
+  PocApps --> Config
+  Telemetry --> SensorIf
+  Telemetry --> MqttSvc
+  Command --> SensorIf
+  MqttSvc --> EspHal
+  CellularSvc --> QuectelAt
+  QuectelAt --> BusHelpers
+  SensorIf --> BusHelpers
+  BusHelpers --> EspHal
+  EspHal --> Mcu
+  SensorIf --> SensorsHw
+  QuectelAt --> Modem

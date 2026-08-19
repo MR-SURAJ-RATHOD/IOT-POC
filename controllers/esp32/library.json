@@ -1,0 +1,9 @@
+{
+  "name": "esp32_hal",
+  "version": "0.1.0",
+  "description": "ESP32 hardware abstraction for the IoT POC reference",
+  "keywords": "esp32, hal, gpio, uart",
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": "espressif32"
+}

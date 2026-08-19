@@ -1,0 +1,8 @@
+{
+  "name": "hal_contract",
+  "version": "0.1.0",
+  "description": "Portable HAL interfaces (no Arduino dependency)",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}

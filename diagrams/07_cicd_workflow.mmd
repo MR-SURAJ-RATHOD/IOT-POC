@@ -1,0 +1,10 @@
+flowchart LR
+  Push[Push_or_PR] --> Lint[Secret_scan]
+  Push --> Native[Native_unit_tests]
+  Push --> Build[PlatformIO_build_matrix]
+  Build --> Rel[poc_relay_control]
+  Build --> Ex[example_envs]
+  Native --> Gate[CI_gate]
+  Lint --> Gate
+  Rel --> Gate
+  Ex --> Gate

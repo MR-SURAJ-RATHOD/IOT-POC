@@ -1,0 +1,17 @@
+sequenceDiagram
+  participant App as CellularService
+  participant SM as ModemStateMachine
+  participant AT as AtClient
+  participant P as AtParser
+  participant U as UartHal
+  participant Q as QuectelModule
+  App->>SM: bring_up
+  SM->>AT: AT
+  AT->>U: write
+  U->>Q: bytes
+  Q-->>P: URC_or_response
+  P-->>AT: parsed_lines
+  AT-->>SM: ok_or_error
+  SM->>AT: SIM_net_PDP
+  SM-->>App: registered_or_fault
+  App->>AT: HTTP_or_MQTT_or_GNSS
