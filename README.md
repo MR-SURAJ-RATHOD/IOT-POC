@@ -42,11 +42,22 @@ mqtt/               ESP32-hosted MQTT service helpers
 rtos/               FreeRTOS helpers and portable state machines
 poc/                Composed mini-systems
 examples/           Single-concern demos
+ESP32 4G LTE A7672 MODULE/  Standalone 4G MQTT gateway (A7672 / SIM7672)
 docs/               Engineering documentation
 diagrams/           Architecture diagrams (Mermaid + SVG)
 tests/              Native Unity tests, fixtures, hardware checklists
 .github/workflows/  CI
 ```
+
+## ESP32 4G LTE automation gateway
+
+For **remote sites without Wi-Fi**, the [`ESP32 4G LTE A7672 MODULE`](ESP32%204G%20LTE%20A7672%20MODULE/) project publishes **real-time automation telemetry** over cellular MQTT.
+
+- Modem: A7672 / SIM7672S (VVM501-class board)
+- You configure: MQTT broker, device ID, APN (`config.local.env`)
+- You customize: sensor payload — temperature, tank level, digital I/O, Modbus meters, flow pulses, etc.
+
+See [docs/cellular/esp32-a7672-gateway.md](docs/cellular/esp32-a7672-gateway.md) for sensor integration examples and architecture.
 
 ## Prerequisites
 
@@ -118,6 +129,7 @@ This is a **public** repository.
 - [Hardware](docs/hardware/README.md)
 - [Sensors](docs/sensors/README.md)
 - [Cellular (Quectel)](docs/cellular/README.md)
+- [ESP32 A7672 4G gateway](docs/cellular/esp32-a7672-gateway.md)
 - [MQTT](docs/mqtt/README.md)
 - [FreeRTOS](docs/rtos/README.md)
 - [Troubleshooting](docs/troubleshooting/README.md)

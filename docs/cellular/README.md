@@ -27,6 +27,15 @@ Transport is `iotpoc::hal::IUart`. On ESP32, `ArduinoUart` wraps `Serial2`.
 | `example_diagnostics` | `AT+CGMI` / `AT+CGMR` |
 | `poc_cellular_data_path` | Full bring-up + watchdog |
 
+## ESP32 + A7672 standalone gateway
+
+Separate PlatformIO tree for **cellular MQTT automation** (not Quectel AT stack):
+
+- Folder: [`ESP32 4G LTE A7672 MODULE`](../../ESP32%204G%20LTE%20A7672%20MODULE/)
+- Doc: [esp32-a7672-gateway.md](esp32-a7672-gateway.md) — sensor types, real-time publish flow, links to `sensors/` drivers
+
+Use when the board integrates ESP32 + SIM7672/A7672 (TinyGSM) and you publish custom JSON telemetry over 4G.
+
 ## TLS
 
 Prefer **public test** endpoints. Private certificates stay in gitignored files. Modem TLS (`AT+QSSLCFG`) and ESP32 TLS (after PPP, future) are different trust stores — document which path you use.
