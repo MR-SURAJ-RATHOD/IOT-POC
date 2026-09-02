@@ -6,6 +6,58 @@ It is **not** a weather-station product. Temperature, humidity, wind, rain, and 
 
 First controller target: **ESP32**. Build system: **PlatformIO** (Arduino-ESP32 framework). ESP-IDF is a documented future option, not the v1 default.
 
+## Start here
+
+**New to this repo?**
+
+1. **[docs/RUN.md](docs/RUN.md)** — copy-paste commands so **build & run actually work**
+2. **[docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)** — folder map and which path to pick
+
+**Quick verify (no hardware):**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/setup-local-config.ps1
+powershell -ExecutionPolicy Bypass -File scripts/smoke-verify.ps1
+```
+
+Linux/macOS: `./scripts/setup-local-config.sh` then `./scripts/smoke-verify.sh`
+
+```mermaid
+flowchart LR
+    LIB["Libraries\ncontrollers/ sensors/ mqtt/ …"]
+    EX["examples/\none topic each"]
+    POC["poc/\nmini-systems"]
+    FW["firmware/\nPlatformIO build"]
+    GW["ESP32 4G LTE\nA7672 MODULE/"]
+
+    LIB --> EX
+    LIB --> POC
+    FW --> EX
+    FW --> POC
+    GW --> GW
+```
+
+| I want to… | Go to |
+| --- | --- |
+| Understand the whole tree | [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) |
+| **Controllers, sensors, industries (scope)** | **[docs/REFERENCE_SCOPE.md](docs/REFERENCE_SCOPE.md)** |
+| Flash relay demo (easiest) | `cd firmware` → `pio run -e poc_relay_control -t upload` |
+| Browse all demos | [examples/README.md](examples/README.md) |
+| 4G A7672 board + MQTT | [ESP32 4G LTE A7672 MODULE/README.md](ESP32%204G%20LTE%20A7672%20MODULE/README.md) |
+| STM32 industrial starter | `cd firmware` → `pio run -e example_stm32_edge` |
+| Raspberry Pi MQTT gateway | [edge/raspberry_pi/README.md](edge/raspberry_pi/README.md) |
+| Run tests without hardware | `cd firmware` → `pio test -e native` |
+
+---
+
+## Scope at a glance
+
+| Platforms | Sensor buses | Industries |
+| --- | --- | --- |
+| **ESP32** (full) · **STM32** (starter) · **Raspberry Pi** (edge Python) | GPIO, ADC, I2C, pulse, RS-485, UART | Agriculture · Water · Industrial · Building · Energy |
+
+Details: **[docs/REFERENCE_SCOPE.md](docs/REFERENCE_SCOPE.md)** · STM32: `pio run -e example_stm32_edge` · Pi: [`edge/raspberry_pi/`](edge/raspberry_pi/)
+
 ## What this repository demonstrates
 
 | Area | Patterns |
@@ -34,7 +86,8 @@ Includes travel **downward only**. See [docs/architecture](docs/architecture/REA
 
 ```text
 firmware/           PlatformIO workspace and config placeholders
-controllers/        SoC HAL (ESP32 first)
+controllers/        SoC HAL — esp32 (full), stm32 (starter)
+edge/               Linux edge runtimes — raspberry_pi (Python MQTT)
 sensors/            Generic sensor/actuator drivers
 communication/      UART / I2C / SPI / RS-485 / Modbus helpers
 cellular/quectel/   Original AT stack and feature modules
@@ -125,6 +178,13 @@ This is a **public** repository.
 
 ## Documentation
 
+- **[Run guide](docs/RUN.md)** — step-by-step build, flash, and dry-run for every platform
+- **[Getting started](docs/GETTING_STARTED.md)** — repo map, pick-your-path, build layout
+- **[Reference scope](docs/REFERENCE_SCOPE.md)** — ESP32 / STM32 / Raspberry Pi, sensor types, industry use cases
+- [Controllers & edge](docs/controllers/README.md) — STM32 firmware, Pi Python gateway
+- [PlatformIO workspace](firmware/README.md) — why `cd firmware` and `src_dir = ..`
+- [Examples index](examples/README.md) — all `example_*` environments
+- [POC index](poc/README.md) — composed mini-systems
 - [Architecture](docs/architecture/README.md)
 - [Hardware](docs/hardware/README.md)
 - [Sensors](docs/sensors/README.md)
