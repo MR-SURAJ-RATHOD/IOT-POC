@@ -19,15 +19,16 @@ Please open an issue before large refactors or new third-party dependencies.
 
 1. Install [PlatformIO Core](https://platformio.org/install/cli).
 2. Clone this repository.
-3. Copy `firmware/include/config.example.h` to `firmware/include/config.local.h` and fill **local** placeholders. Never commit `config.local.h`.
-4. Build the first POC:
+3. Read [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) for repo layout and which folder to use.
+4. Copy `firmware/include/config.example.h` to `firmware/include/config.local.h` and fill **local** placeholders. Never commit `config.local.h`.
+5. Build the first POC:
 
 ```text
 cd firmware
 pio run -e poc_relay_control
 ```
 
-5. Run host tests (requires `gcc`/`g++` on PATH; GitHub Actions uses Ubuntu):
+6. Run host tests (requires `gcc`/`g++` on PATH; GitHub Actions uses Ubuntu):
 
 ```text
 cd firmware

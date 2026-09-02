@@ -4,6 +4,8 @@ Reference firmware for **ESP32 + A7672 / SIM7672S (VVM501-class) 4G LTE** boards
 
 This folder is meant to be **shared and reused**: configuration and JSON payload are **blank templates** with comments showing where to add your own values and fields.
 
+> **Part of [IOT-POC](../README.md).** Full run steps: [docs/RUN.md](../docs/RUN.md#4-esp32--a7672-4g-gateway--compile). Scope: [REFERENCE_SCOPE.md](../docs/REFERENCE_SCOPE.md).
+
 ---
 
 ## What this project does
