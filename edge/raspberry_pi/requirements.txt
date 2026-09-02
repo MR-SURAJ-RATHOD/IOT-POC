@@ -1,0 +1,5 @@
+paho-mqtt>=1.6.1
+
+# Optional hardware access (uncomment in telemetry_gateway.py when needed):
+# gpiozero>=2.0
+# smbus2>=0.4
