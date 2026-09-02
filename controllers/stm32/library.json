@@ -1,0 +1,9 @@
+{
+  "name": "stm32_hal",
+  "version": "0.1.0",
+  "description": "STM32 starter HAL for the IoT POC reference (Arduino-STM32)",
+  "keywords": "stm32, hal, nucleo",
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": "ststm32"
+}

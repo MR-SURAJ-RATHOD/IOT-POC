@@ -99,4 +99,5 @@ jobs:
             -e example_rtos_event_groups \
             -e example_rtos_timers \
             -e example_rtos_watchdog \
-            -e example_rtos_state_machines
+            -e example_rtos_state_machines \
+            -e example_stm32_edge
