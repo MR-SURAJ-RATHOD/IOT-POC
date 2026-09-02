@@ -2,6 +2,8 @@
 
 The sensor layer is generic. Weather-related quantities are **one category** among analog, digital, RTC, and RS-485 devices.
 
+**Full checklist:** sensor types, what you can add, and industry mapping (agri, water, industrial) → [REFERENCE_SCOPE.md](../REFERENCE_SCOPE.md).
+
 ## Contract
 
 `iotpoc::sensors::ISensor`

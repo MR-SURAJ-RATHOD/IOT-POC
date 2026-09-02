@@ -2,6 +2,8 @@
 
 Pin numbers in firmware are **examples**. Change them in `config.local.h` for your PCB.
 
+**Controller profiles and industry wiring context:** [REFERENCE_SCOPE.md](../REFERENCE_SCOPE.md).
+
 ## ESP32 controller
 
 - DevKit-class ESP32 (WROOM / WROVER). First target for every example.

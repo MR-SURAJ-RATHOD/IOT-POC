@@ -4,4 +4,4 @@ Generic, reusable drivers. Environmental quantities (temperature, wind, rain, UV
 
 All drivers implement `iotpoc::sensors::ISensor` and return `SensorReading`. Buses and pins are injected; drivers do not own global `Wire` objects.
 
-See [docs/sensors](../docs/sensors/README.md).
+See [docs/sensors](../docs/sensors/README.md) and the full sensor/industry scope in [docs/REFERENCE_SCOPE.md](../docs/REFERENCE_SCOPE.md).

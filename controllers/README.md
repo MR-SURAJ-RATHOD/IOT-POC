@@ -1,17 +1,20 @@
-# ESP32 controller HAL
+# Controllers (multi-platform HAL)
 
-First SoC target for this reference repository. The HAL hides Arduino-ESP32 calls behind small interfaces so services and examples do not scatter `pinMode` / `Serial` usage.
+Hardware abstraction per **SoC / board**. Application and sensor code should depend on **`hal_contract`** interfaces, not on Arduino APIs directly.
 
-| Header | Role |
-| --- | --- |
-| `iotpoc/hal/gpio.h` | Pin mode and level |
-| `iotpoc/hal/uart.h` | Byte-oriented UART contract used by the Quectel AT transport |
-| `iotpoc/hal/i2c.h` | Injected I2C bus for sensor drivers |
-| `iotpoc/hal/spi.h` | SPI transfer contract (stub adapter can be added per board) |
-| `iotpoc/hal/adc.h` | Analog samples |
-| `iotpoc/hal/watchdog.h` | Task watchdog helper |
-| `iotpoc/hal/board.h` | Serial console and reset-reason string |
+| Platform | Folder | Firmware status | Typical role |
+| --- | --- | --- | --- |
+| **ESP32** | [`esp32/`](esp32/) | **Full** — all examples & POCs | Edge node, Wi-Fi/cellular gateway, Modbus |
+| **STM32** | [`stm32/`](stm32/) | **Starter** — HAL + blink example | Industrial I/O, low-power field node, CAN/UART |
+| **Raspberry Pi** | [`../edge/raspberry_pi/`](../edge/raspberry_pi/) | **Edge service** (Linux/Python) | Gateway, local MQTT bridge, dashboard host |
 
-Arduino implementations (`ArduinoUart`, `ArduinoI2c`) live in this library and are not compiled in the `native` test environment.
+Shared contract headers: [`hal_contract/include/iotpoc/hal/`](hal_contract/include/iotpoc/hal/).
 
-Pin numbers in examples are **illustrative**. Copy `config.example.h` and change them for your PCB.
+Platform comparison and industry mapping: [docs/REFERENCE_SCOPE.md](../docs/REFERENCE_SCOPE.md).
+
+## Add a new MCU
+
+1. Implement `iotpoc::hal::IUart`, GPIO helpers, etc. under `controllers/<mcu>/`.
+2. Add `library.json` with the correct PlatformIO `platforms` filter.
+3. Add `[env:example_<mcu>_…]` in `firmware/platformio.ini`.
+4. Document pins in `docs/hardware/` and link from REFERENCE_SCOPE.
